@@ -56,11 +56,11 @@ class Pelicula {
     swal({
         title: '¿Estas seguro?',
         icon: 'warning',
-        buttons: ["¡Detente!", "¡Hazlo!"],
+        buttons: ["Detente!", "¡Hazlo!"],
       }).then((result) => {
      if (result.isConfirmed) {
         let peliculas = peliculas.filter(item => item.titulo != titulo);
-        localStorage.setItem("peliculas", JSON.stringify(peliculas));
+        localStorage.removeItem("peliculas", JSON.stringify(peliculas));
         mostrarPeliculas();
        swal({
           title: '¡Listo, Eliminado!',
